@@ -4,89 +4,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/2b623f016d.js" crossorigin="anonymous"></script>
     <title>SOME | Social Media Platform</title>
     <link href="css/style.css" rel="stylesheet">
     <link rel="icon" href="img/favicon_io/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/2b623f016d.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="bg-gradient-to-br from-blue-400 to-blue-900 h-screen">
+<body class="bg-gradient-to-br from-blue-400 to-blue-900 h-auto flex flex-col items-center justify-center">
     <!-- Navbar -->
     <nav class="bg-blue-100 shadow-md p-1 relative min-w-full">
-        <div class="container mx-auto flex justify-between items-center px-4 ">
+        <div class="container mx-auto flex justify-between items-center px-4">
             <img src="../img/logo.png" alt="logo" class="h-20 w-20 p-1">
-            <button id="menu-toggle" class="text-2xl text-gray-700 md:hidden">
+            <button id="menu-toggle" class="text-2xl text-gray-700 md:hidden" aria-expanded="false">
                 ☰
             </button>
-            <ul id="menu" class="hidden md:flex text-md text-gray-700 space-x-6 sticky top-0">
-                <li><a href="/profile/index.html" class="hover:text-blue-500  hover:underline">Profile</a></li>
+            <ul id="menu" class="hidden md:flex text-md text-gray-700 space-x-6">
+                <li><a href="/profile/index.html" class="hover:text-blue-500 hover:underline">Profile</a></li>
                 <li><a href="/feed/index.html" class="hover:text-blue-500 hover:underline">Feed</a></li>
                 <li><a href="index.html" class="hover:text-blue-500 hover:underline">Log In</a></li>
             </ul>
         </div>
 
-        <!-- Mobilmeny -->
+        <!-- Mobile Menu -->
         <ul id="mobile-menu"
-            class=" hidden absolute left-0 top-full w-full bg-blue-100 shadow-md flex-col text-gray-700 text-center space-y-4 p-2 p-4 pb-8 md:hidden ">
-            <li><a href="/profile/index.html" class="block p-2 hover:bg-blue-200 flex justify-center flex-col"><i
-                        class="fa-solid fa-user text-xs text-green-400 drop-shadow"></i>Profile</a></li>
-            <li><a href="/feed/index.html" class="block p-2 hover:bg-blue-200 flex justify-center flex-col"><i
-                        class="fa-solid fa-rss text-xs text-green-400 drop-shadow"></i>Feed</a></li>
-            <li><a href="/index.html" class="block p-2 hover:bg-blue-200 flex justify-center flex-col"><i
-                        class="fa-solid fa-right-from-bracket text-xs text-red-400 drop-shadow"></i>Log In</a></li>
-
+            class="hidden flex-col bg-blue-100 shadow-md text-gray-700 text-center space-y-4 p-4 md:hidden">
+            <li><a href="/profile/index.html" class="block p-2 hover:bg-blue-200"><i
+                        class="fa-solid fa-user text-xs text-green-400"></i> Profile</a></li>
+            <li><a href="/feed/index.html" class="block p-2 hover:bg-blue-200"><i
+                        class="fa-solid fa-rss text-xs text-green-400"></i> Feed</a></li>
+            <li><a href="/index.html" class="block p-2 hover:bg-blue-200"><i
+                        class="fa-solid fa-right-to-bracket text-xs text-green-700"></i> Log In</a></li>
         </ul>
     </nav>
-    <main class="container flex justify-center flex-col sm:flex-row h-full p-8">
-        <div class="container flex justify-center items-center h-full">
-            <div class="bg-blue-100 flex flex-col p-8 rounded-lg shadow-lg">
-                <h1 class="text-xl font-bold text-center pb-12 pt-2 text-gray-700">Create new account</h1>
-                <form action="/profile/index.html" method="POST">
-                    <div class="mb-4">
-                        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                        <input type="email" name="email" id="email"
-                            class="form-input mt-1 block w-full rounded border-gray-300 " required />
-                    </div>
-                    <div class="mb-4">
-                        <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
-                        <input type="text" name="username" id="username"
-                            class="form-input mt-1 block w-full rounded border-gray-300 shadow-lg" required />
-                    </div>
-                    <div class="mb-4">
-                        <label for="name" class="block text-sm font-medium text-gray-700">First Name</label>
-                        <input type="text" name="name" id="name"
-                            class="form-input mt-1 block w-full rounded border-gray-300" required />
-                    </div>
-                    <div class="mb-4">
-                        <label for="lastName" class="block text-sm font-medium text-gray-700">Last name</label>
-                        <input type="text" name="LastName" id="LastName"
-                            class="form-input mt-1 block w-full rounded border-gray-300" required />
-                    </div>
-                    <div class="mb-4">
-                        <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-                        <input type="password" name="password" id="password" minlength="8" required
-                            class="form-input mt-1 block w-full rounded border-gray-300" />
-                    </div>
 
-                    <div class="mb-4">
-                        <label for="confirm-password" class="block text-sm font-medium text-gray-700">Confirm
-                            Password</label>
-                        <input type="password" name="confirm-password" id="confirm-password" minlength="8" required
-                            class="form-input mt-1 block w-full rounded border-gray-300" />
-                    </div>
-
-                    <div class="mt-12 text-center">
-                        <button type="submit" href="/profile/index.html"
-                            class="bg-green-600 hover:bg-green-500 hover:shadow-xl hover:underline  text-white font-bold py-2 px-4 rounded">
-                            Create account
-                        </button>
-                    </div>
-                </form>
-
-            </div>
-
-
+    <!-- Main Content -->
+    <main class="container flex justify-center content-start items-center min-h-screen p-8">
+        <div class="bg-blue-100 flex flex-col p-8 rounded-lg shadow-lg w-full max-w-md">
+            <h1 class="text-xl font-bold text-center pb-8 text-gray-700">Create new account</h1>
+            <form action="/profile/index.html" method="POST">
+                <div class="mb-6">
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                    <input type="email" name="email" id="email" class="mt-1 block w-full rounded border-gray-300"
+                        required />
+                </div>
+                <div class="mb-6">
+                    <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+                    <input type="text" name="username" id="username" class="mt-1 block w-full rounded border-gray-300"
+                        required />
+                </div>
+                <div class="mb-6">
+                    <label for="name" class="block text-sm font-medium text-gray-700">First Name</label>
+                    <input type="text" name="name" id="name" class="mt-1 block w-full rounded border-gray-300"
+                        required />
+                </div>
+                <div class="mb-6">
+                    <label for="lastname" class="block text-sm font-medium text-gray-700">Last Name</label>
+                    <input type="text" name="lastname" id="lastname" class="mt-1 block w-full rounded border-gray-300"
+                        required />
+                </div>
+                <div class="mb-6">
+                    <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                    <input type="password" name="password" id="password" minlength="8" required
+                        class="mt-1 block w-full rounded border-gray-300" />
+                </div>
+                <div class="mb-4">
+                    <label for="confirm-password" class="block text-sm font-medium text-gray-700">Confirm
+                        Password</label>
+                    <input type="password" name="confirm-password" id="confirm-password" minlength="8" required
+                        class="mt-1 block w-full rounded border-gray-300" />
+                </div>
+                <div class="mt-6 text-center">
+                    <button type="submit"
+                        class="bg-green-600 hover:bg-green-500 text-white font-bold py-2 px-4 rounded">
+                        Create account
+                    </button>
+                </div>
+            </form>
         </div>
     </main>
+    <!-- script burger meny -->
     <script src="../js/script.js"></script>
 </body>
+
+</html>
